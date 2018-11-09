@@ -1,0 +1,40 @@
+.info {
+  width: 800px;
+  font-size: 15px;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 10px;
+    color: rgba(0,0,0,0.7);
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 10px;
+  &:hover {
+    color: #D81E5B;
+    text-decoration: none;
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.back {
+  align-items: center;
+}
+
+li {
+  font-size: 15px;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
