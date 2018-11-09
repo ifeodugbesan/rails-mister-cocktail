@@ -8,6 +8,8 @@ var options = {
   backDelay: 5000
 }
 
+console.log("HELLO")
+
 var typed = new Typed(".element", options);
 
 import { bindSweetAlertButtonDemo } from '../components/banner';
@@ -18,6 +20,9 @@ target.addEventListener("click", (event) => {
   document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     bindSweetAlertButtonDemo();
+    document.querySelector(".swal-button--confirm").addEventListener("click", () => {
+      document.querySelector('form').submit()
+    })
   })
 });
 

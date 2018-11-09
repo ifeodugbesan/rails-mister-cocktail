@@ -13,7 +13,7 @@
   <body>
     <%= render 'layouts/navbar' %>
     <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <%= render 'layouts/footer' %>
     <%= javascript_pack_tag "application" %>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   </body>
