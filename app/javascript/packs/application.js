@@ -1,34 +1,57 @@
 import 'bootstrap';
 import Typed from 'typed.js';
+import { bindSweetAlertButtonDemoCocktail } from '../components/banner';
+import { bindSweetAlertButtonDemoIngredient } from '../components/banner';
+import { deleteWarning } from '../components/delete';
 
-var options = {
+// TYPED.JS
+
+let options = {
   strings: ["Add a cocktail..."],
   typeSpeed: 40,
   loop: true,
   backDelay: 5000
 }
 
-console.log("HELLO")
+let typed = new Typed(".element", options);
 
-var typed = new Typed(".element", options);
+// DELETE INGREDIENT CONFIRMATION
 
-import { bindSweetAlertButtonDemo } from '../components/banner';
-
-const target = document.getElementById("sweet-alert-demo")
-
-target.addEventListener("click", (event) => {
-  document.querySelector("form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    bindSweetAlertButtonDemo();
-    document.querySelector(".swal-button--confirm").addEventListener("click", () => {
-      document.querySelector('form').submit()
-    })
-  })
-});
-
-
-// const submit = document.querySelector("swal-button--confirm");
-
-// submit.addEventListener("click", (event) => {
-
+// document.getElementById("delete").addEventListener("click", (d) => {
+//   Window.confirm()
+//   // d.preventDefault();
 // })
+
+// SWEET ALERT CONFIRMATION
+
+const form = document.querySelector("form");
+
+if (document.getElementById("add-ingredient") === null) {
+  const addCocktail = document.getElementById("sweet-alert-demo")
+
+  addCocktail.addEventListener("click", (event) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+        bindSweetAlertButtonDemoCocktail();
+        document.querySelector(".swal-button--confirm").addEventListener("click", () => {
+          document.querySelector('form').submit()
+        })
+    })
+  });
+}
+
+if (document.getElementById("sweet-alert-demo") === null) {
+  const addIngredient = document.getElementById("add-ingredient")
+  addIngredient.addEventListener("click", (event) => {
+    document.querySelector("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      bindSweetAlertButtonDemoIngredient();
+      document.querySelector(".swal-button--confirm").addEventListener("click", () => {
+        document.querySelector('form').submit()
+      })
+    })
+  });
+}
+
