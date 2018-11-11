@@ -4,6 +4,12 @@
     <%= image_tag 'logo.jpg' %>
   </a>
 
+  <div class="search">
+    <%= form_tag(cocktails_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Cocktails", class: "search-input" %>
+      <%= submit_tag "Search", :name => nil, class: "search-button" %>
+    <% end %>
+  </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <a href="/cocktails/new"><span class="element"></span></a>

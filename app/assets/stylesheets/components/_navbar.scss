@@ -33,7 +33,7 @@
     font-size: 12px;
     color: white;
     &:hover {
-      color: red;
+      color: #96024D;
     }
   }
 }
@@ -85,5 +85,37 @@
   border-top: 1px solid #E6E6E6;
 }
 
+.search {
+  position: absolute;
+  right: 150px;
+}
+
+.search-input {
+  background-color: black;
+  border-radius: 15px;
+  border: 1px solid white;
+  color: white;
+  height: 35px;
+  width: 250px;
+  font-size: 15px;
+  padding-left: 15px;
+}
+
+::placeholder {
+  color: #2E2E2E;
+}
+
+.search-button {
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+  height: 35px;
+  padding: 0px 20px;
+  font-size: 15px;
+  &:hover {
+    border-color: #96024D;
+    color: #96024D;
+  }
+}
 
 
