@@ -1,9 +1,0 @@
-<div class="container">
-  <h1>New Review</h1>
-  <%= simple_form_for [ @cocktail, @review ] do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating, collection: ['1','2','3','4','5'] %>
-    <%= f.submit "Add review", class: "btn btn-primary", id: "add-review" %>
-  <% end %>
-  <%= link_to 'Back', cocktail_path(@cocktail) %>
-</div>
