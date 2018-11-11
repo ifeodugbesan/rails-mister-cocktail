@@ -1,6 +1,5 @@
 <div class="banner" style="background-image: url('https://images.pexels.com/photos/1260705/pexels-photo-1260705.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
 </div>
-
 <div class="container text-center">
   <% if @cocktails.count > 0 %>
     <h1>All Cocktails (<%= @cocktails.count %>)</h1>
@@ -8,13 +7,28 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
+        <div class="card zoom" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
             <%= link_to "", cocktail_path(cocktail), :class => "card-link" %>
           <div>
             <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          </div>
+          <div class="rating-card">
+            <% case @average_rating %>
+            <% when 1 %>
+              <i class="fas fa-star stars"></i>
+            <% when 2 %>
+              <i class="fas fa-star stars"></i><i class="fas fa-star stars"></i>
+            <% when 3 %>
+              <i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i>
+            <% when 4 %>
+              <i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class=  fas fa-star stars"></i>
+            <% when 5 %>
+              <i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i>
+            <% end %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+

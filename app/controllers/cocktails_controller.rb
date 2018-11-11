@@ -5,7 +5,9 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @dose = Dose.new
     @doses = @cocktail.doses
+    @review = Review.new
     @reviews = @cocktail.reviews
     amount = 0
     sum = 0
@@ -15,7 +17,7 @@ class CocktailsController < ApplicationController
     @cocktail.reviews.each do
       amount += 1
     end
-    @average_rating = sum / amount unless amount.zero?
+      @average_rating = sum.to_f / amount unless amount.zero?
   end
 
   def new

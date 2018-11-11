@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.cocktail = @cocktail
-    @review.save ? (redirect_to cocktail_path(@cocktail)) : (render :new)
+    @review.save
+    redirect_to cocktail_path(@cocktail)
   end
 
   def destroy

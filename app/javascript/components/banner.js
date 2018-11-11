@@ -24,6 +24,18 @@ function bindSweetAlertButtonDemoIngredient() {
   }
 }
 
+function bindSweetAlertButtonDemoReview() {
+  const swalButtonReview = document.getElementById("add-review");
+  console.log(swalButtonReview)
+  if (swalButtonReview) { // protect other pages
+      swal({
+        title: "Success",
+        text: "You have added a new review!",
+        icon: "success"
+      });
+  }
+}
+
 export { bindSweetAlertButtonDemoCocktail };
 export { bindSweetAlertButtonDemoIngredient };
-
+export { bindSweetAlertButtonDemoReview };
